@@ -94,6 +94,9 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [BASE_DIR / 'base' / 'static']
 
+if not STATIC_ROOT.is_dir():
+    STATIC_ROOT.mkdir()
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_TAGS = {
