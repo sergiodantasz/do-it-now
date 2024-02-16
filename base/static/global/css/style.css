@@ -93,7 +93,7 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .content {
