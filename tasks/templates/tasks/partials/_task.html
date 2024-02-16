@@ -1,0 +1,8 @@
+<li class="task">
+  <span class="task-name">{{ task.name }}</span>
+  <form action="{% url "tasks:done" %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ task.id }}">
+    <button class="button" type="submit">I did it</button>
+  </form>
+</li>

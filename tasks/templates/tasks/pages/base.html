@@ -1,0 +1,17 @@
+{% extends "global/pages/base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static "tasks/css/style.css" %}">
+{% endblock head %}
+{% block content %}
+  <h1>Do It Now</h1>
+  <section class="tasks-container">
+    {% if tasks %}
+      {% include "tasks/partials/_tasks.html" %}
+    {% else %}
+      <h5>Come on, do something.</h5>
+    {% endif %}
+    {% include "tasks/partials/_form.html" %}
+  </section>
+  {% include "users/partials/_user.html" %}
+{% endblock content %}

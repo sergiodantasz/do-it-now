@@ -1,0 +1,59 @@
+.user-information {
+  background-color: var(--fountain-blue-100);
+  width: fit-content;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-username {
+  color: var(--fountain-blue-600);
+  margin-bottom: 1rem;
+}
+
+.tasks-container {
+  background-color: var(--fountain-blue-100);
+  width: 100%;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tasks {
+  list-style-type: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  padding-block: 1rem;
+  display: flex;
+  border-bottom: 0.1rem solid var(--fountain-blue-600);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-name {
+  word-break: break-all;
+}
+
+.task:first-child {
+  padding-top: 0;
+}
+
+.form-fields {
+  gap: 1rem;
+}
+
+@media (max-width: 320px) {
+  .task {
+    flex-direction: column;
+  }
+}

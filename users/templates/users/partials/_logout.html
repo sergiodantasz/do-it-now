@@ -1,0 +1,5 @@
+<form class="logout-form" action="{% url "users:logout" %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="username" value="{{ user.username }}">
+  <button class="button logout-button" type="submit">Logout</button>
+</form>
