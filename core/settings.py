@@ -1,21 +1,24 @@
-from os import getenv
 from pathlib import Path
 
 from django.contrib.messages import constants as messages
 from dotenv import load_dotenv
+from environ import Env
+
+env = Env(
+    DEBUG=(bool, False),
+    SECRET_KEY=(str, ''),
+    ALLOWED_HOSTS=(list, []),
+    CSRF_TRUSTED_ORIGINS=(list, [])
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(BASE_DIR / '.env', override=True)
 
-SECRET_KEY = getenv('SECRET_KEY', '')
-DEBUG = bool(int(getenv('DEBUG', '0')))
-ALLOWED_HOSTS = [
-    host.strip() for host in getenv('ALLOWED_HOSTS', '*').split(',')
-]
-CSRF_TRUSTED_ORIGINS = [
-    host.strip() for host in getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
-]
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,12 +65,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {'default': env.db()}
 
 STORAGES = {
     'staticfiles': {
