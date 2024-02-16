@@ -12,7 +12,7 @@ ERROR_MESSAGES = {
 }
 
 
-def make_error_messages(exceptions: list | tuple | None = None, **constraints) -> dict[str, str]:
+def make_error_messages(exceptions=None, **constraints) -> dict[str, str]:
     """Makes custom error messages for a form field.
 
     Args:
