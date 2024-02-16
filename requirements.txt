@@ -3,3 +3,4 @@ python-dotenv
 django-environ
 psycopg2-binary
 django-admin-relation-links
+whitenoise
