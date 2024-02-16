@@ -93,7 +93,7 @@ h6 {
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .content {
@@ -151,7 +151,13 @@ h6 {
   outline-offset: 0.5rem;
 }
 
-.messages,
+.messages {
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
+  left: 2rem;
+}
+
 .errors {
   width: 100%;
 }

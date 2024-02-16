@@ -1,2 +1,7 @@
 Django
 python-dotenv
+gunicorn
+whitenoise
+django-environ
+psycopg2-binary
+django-admin-relation-links
