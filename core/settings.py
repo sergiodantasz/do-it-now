@@ -4,19 +4,14 @@ from django.contrib.messages import constants as messages
 from dotenv import load_dotenv
 from environ import Env
 
-env = Env(
-    DEBUG=(bool, False),
-    SECRET_KEY=(str, ''),
-    ALLOWED_HOSTS=(list, []),
-    CSRF_TRUSTED_ORIGINS=(list, [])
-)
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = Env()
 
 load_dotenv(BASE_DIR / '.env', override=True)
 
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
+SECRET_KEY = env.str('SECRET_KEY')
+DEBUG = env.bool('DEBUG')
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
 
@@ -28,8 +23,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-
-    # Do It Now
     'tasks',
     'users',
 ]
@@ -65,7 +58,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-DATABASES = {'default': env.db()}
+DATABASES = {
+    'default': {
+        'ENGINE': env.str('DB_ENGINE'),
+        'NAME': env.str('DB_NAME'),
+        'HOST': env.str('DB_HOST'),
+        'PORT': env.int('DB_PORT'),
+        'USER': env.str('DB_USER'),
+        'PASSWORD': env.str('DB_PASSWORD')
+    }
+}
 
 STORAGES = {
     'staticfiles': {
