@@ -1,0 +1,248 @@
+:root {
+  /* Fountains Blue */
+  --fountain-blue-50: #f1f9fa;
+  --fountain-blue-100: #dceff1;
+  --fountain-blue-200: #bde1e4;
+  --fountain-blue-300: #90cad0;
+  --fountain-blue-400: #64afb9;
+  --fountain-blue-500: #408e9a;
+  --fountain-blue-600: #387582;
+  --fountain-blue-700: #32606c;
+  --fountain-blue-800: #30515a;
+  --fountain-blue-900: #2c444d;
+  --fountain-blue-950: #192c33;
+
+  /* Stone */
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --stone-950: #0c0a09;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Inria Sans', sans-serif;
+  text-align: center;
+  color: var(--fountain-blue-950);
+  background-color: var(--fountain-blue-50);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+.main-content {
+  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  min-height: 100svh;
+}
+
+.content {
+  max-width: 120rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.footer {
+  background-color: var(--fountain-blue-800);
+  color: var(--fountain-blue-300);
+}
+
+.footer a {
+  transition: all 150ms ease-in-out;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--fountain-blue-200);
+}
+
+.footer a:focus-visible {
+  color: var(--fountain-blue-200);
+  outline: none;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-block: 1rem;
+}
+
+.button {
+  background-color: var(--fountain-blue-400);
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+  transition: all 150ms ease-in-out;
+  height: fit-content;
+  outline-color: var(--fountain-blue-500);
+  width: max-content;
+}
+
+.button:hover {
+  background-color: var(--fountain-blue-300);
+}
+
+.button:active {
+  background-color: var(--fountain-blue-500);
+}
+
+.button:focus-visible {
+  outline-offset: 0.5rem;
+}
+
+.messages,
+.errors {
+  width: 100%;
+}
+
+.messages-list,
+.errors-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message,
+.error {
+  padding: 1rem 2rem;
+  border: 0.1rem solid var(--fountain-blue-800);
+  border-radius: 1rem;
+  color: var(--fountain-blue-800);
+  background-color: var(--fountain-blue-100);
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-inline: 3.5rem;
+}
+
+.message .close-icon {
+  height: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  transition: all 150ms ease-in-out;
+}
+
+.message .close-icon:hover {
+  transform: rotate(90deg);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.form-fields {
+  width: 100%;
+  gap: 2rem;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1 1 20rem;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 1rem;
+  border: 0.1rem solid var(--fountain-blue-200);
+  border-radius: 1rem;
+  transition: all 150ms ease-in-out;
+}
+
+.form-field input::placeholder {
+  color: var(--stone-400);
+}
+
+.form-field input:focus {
+  border-color: var(--fountain-blue-500);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .button {
+    padding-inline: 2rem;
+  }
+}

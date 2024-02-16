@@ -1,0 +1,18 @@
+<form class="form" action="{{ action }}" method="post">
+  {% csrf_token %}
+  <div class="form-fields">
+    {% for field in form %}
+      <div class="form-field">
+        {% if show_labels %}
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% endif %}
+        {{ field }}
+      </div>
+    {% endfor %}
+    {% block actions_inside %}{% endblock actions_inside %}
+    {% if form.errors %}
+      {% include "global/partials/_errors.html" %}
+    {% endif %}
+  </div>
+  {% block actions_outsite %}{% endblock actions_outsite %}
+</form>

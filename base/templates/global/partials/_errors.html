@@ -1,0 +1,9 @@
+<div class="errors">
+  <ul class="errors-list">
+    {% for field, errors in form.errors.items %}
+      {% for error in errors %}
+        <li class="error">{{ error }}</li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>

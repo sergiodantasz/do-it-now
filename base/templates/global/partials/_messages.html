@@ -1,0 +1,11 @@
+{% load static %}
+<div class="messages">
+  <ul class="messages-list">
+    {% for message in messages %}
+      <li class="message {{ message.tags }}">
+        {{ message }}
+        <img class="close-icon" src="{% static "global/img/close.svg" %}" alt="Close icon.">
+      </li>
+    {% endfor %}
+  </ul>
+</div>
