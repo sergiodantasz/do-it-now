@@ -9,8 +9,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env', override=True)
 
 SECRET_KEY = getenv('SECRET_KEY', '')
-DEBUG = False
-ALLOWED_HOSTS = ['*']
+DEBUG = bool(int(getenv('DEBUG', '0')))
+ALLOWED_HOSTS = [
+    host.strip() for host in getenv('ALLOWED_HOSTS', '*').split(',')
+]
+CSRF_TRUSTED_ORIGINS = [
+    host.strip() for host in getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
