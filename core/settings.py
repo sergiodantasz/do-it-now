@@ -9,8 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env', override=True)
 
 SECRET_KEY = getenv('SECRET_KEY', '')
-DEBUG = bool(int(getenv('DEBUG', '0')))
-ALLOWED_HOSTS = [host.strip() for host in getenv('ALLOWED_HOSTS', '*').split(',')]
+DEBUG = False
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://do-it-now.up.railway.app/']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
