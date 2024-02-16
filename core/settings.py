@@ -10,7 +10,7 @@ load_dotenv(BASE_DIR / '.env', override=True)
 
 SECRET_KEY = getenv('SECRET_KEY', '')
 DEBUG = False
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://do-it-now.up.railway.app/']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
