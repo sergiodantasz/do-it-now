@@ -64,11 +64,7 @@ DATABASES = {
     }
 }
 
-STORAGES = {
-    'staticfiles': {
-        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
-    },
-}
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -91,11 +87,8 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'base' / 'static']
-
-if not STATIC_ROOT.is_dir():
-    STATIC_ROOT.mkdir()
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
