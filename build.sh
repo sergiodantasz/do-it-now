@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npm --version
+
 echo "Creating a virtual environment..."
 python3.9 -m venv venv
 source venv/bin/activate
